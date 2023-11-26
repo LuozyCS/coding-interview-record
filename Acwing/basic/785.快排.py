@@ -1,3 +1,10 @@
+# 快速排序，选取点x，可以是left right或者len（nums）//2
+# 让左边的都小于等于x  右边都大于等于x  （可以加一个middle）
+# 递归进行  注意结束的边界
+# 平均nlogn   最坏n2
+# 快排  不稳定  
+
+
 def qsort(arr, l, r):
     if l == r:
         return
