@@ -18,9 +18,9 @@ def SL(l, r, x):
 
 def SR(l, r, x):
     while l < r:
-        mid = (l + r + 1)//2 # 重点
+        mid = (l + r + 1)//2 # 重点 自己推一下 1 2 2 3 3 4，如果不+1就会死循环
         if nums[mid] <= x: l = mid
-        else: r = mid -1 # 重点
+        else: r = mid -1 # 重点  因为mid本身不等于 就得往后一位
     return r
     
 if __name__ == "__main__":
