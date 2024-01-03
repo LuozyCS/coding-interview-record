@@ -5,6 +5,7 @@ N = list(map(int, input().split()))
 M = list(map(int, input().split()))
 # 防list out of range bug
 
+# 这个逻辑要清楚
 def main():
     j = 0
     for i in range(n):
