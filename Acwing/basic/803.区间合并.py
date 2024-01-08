@@ -26,4 +26,4 @@ for i in range(1, n):
         num += 1
         st = arr[i][0]
         ed = arr[i][1]
-print (arr)
+print (num)
