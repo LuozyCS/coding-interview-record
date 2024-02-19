@@ -24,33 +24,45 @@
 # 2.上述数组，所有位往后移动一位，并且第一位改为-1，此为next数组。
 # 3.使用next数组：
 
+
+# #######################################################################################
+  
 from sys import stdin
 class KMP:
-    def partial(self, pattern):
-        """ Calculate partial match table: String -> [Int]"""
-        ret = [0]
-        # i从1到len
-        for i in range(1, len(pattern)):
-            j = ret[i - 1]
-            while j > 0 and pattern[j] != pattern[i]:
-                j = ret[j - 1]
-            ret.append(j + 1 if pattern[j] == pattern[i] else j)
-        return ret
-
+    def next(self, pattern):
+        """ 
+        Calculate next array
+        """
+        next = [0] * len(pattern)
+        L = 0
+        R = 1
+        while R < len(pattern):
+            if pattern[L] == pattern[R]:
+                L += 1
+                next[R] = L
+                R += 1
+            elif L != 0:
+                L = next[L - 1]
+            else:
+                L = 0
+                R += 1
+        # next = [-1] + next[:-1]
+        return next
+        
     def search(self, T, P):
         """ 
-        KMP search main algorithm: String -> String -> [Int] 
-        Return all the matching position of pattern string P in T
+        KMP search
+        用这个search方法就不需要上面的next后移并且加一个-1
         """
-        partial, ret, j = self.partial(P), [], 0
-
+        next, ret, j = self.next(P), [], 0
         for i in range(len(T)):
             while j > 0 and T[i] != P[j]:
-                j = partial[j - 1]
-            if T[i] == P[j]: j += 1
-            if j == len(P): 
-                ret.append(i - (j - 1))
-                j = partial[j - 1]
+                j = next[j - 1]
+            if T[i] == P[j]:
+                j += 1
+            if j == len(P):
+                ret.append(i - len(P) + 1) 
+                j = next[j - 1]
         return ret
 
 n = int(stdin.readline())
@@ -61,4 +73,3 @@ kmp = KMP()
 temp = kmp.search(text,pattern)
 for item in temp:
     print(item,end=' ')
-
