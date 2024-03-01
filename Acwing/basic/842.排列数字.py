@@ -1,6 +1,7 @@
 # dfs,其实就是递归
 N = 10
 path = [0] * N
+# True Flase也可以
 state = [0] * N
 n = 0
 
