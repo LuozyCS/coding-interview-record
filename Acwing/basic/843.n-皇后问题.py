@@ -1,6 +1,6 @@
 # 和数字排列问题很像
 n = 0
-N = 10
+N = 20
 path = [[0] * N for _ in range(N)]
 
 # 因为是二维的，而且还有对角线的皇后也不可以存在，所以需要更多东西去存状态
@@ -16,10 +16,10 @@ def dfs(u):
             for j in range(n):
                 if path[i][j] == 1:
                     print("Q", end = "") 
-                    break # 一行只能有一个皇后
                 else:
                     print(".", end = "")
             print()
+        print()
         return
     # 开始放皇后
     for i in range(n):
@@ -35,5 +35,5 @@ def dfs(u):
 def main():
     global n
     n = int(input())
-    dfs(1)
+    dfs(0)
 main()
