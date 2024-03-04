@@ -26,7 +26,7 @@ def bfs():
     2.因为我们最终只取print(dist[n - 1][m - 1])，并且这个dist只会被最早到达的路径更新一次。
     '''
     print(dist[n - 1][m - 1])
-            
+    
 
 def main():
     global g, dist, n, m
