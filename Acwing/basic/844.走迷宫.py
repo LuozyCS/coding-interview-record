@@ -11,8 +11,11 @@ def bfs():
     dx = [-1, 0, 1, 0]
     dy = [0, 1, 0, -1]
     dist[0][0] = 0
+
     queue = [(0, 0)]
     while queue:
+        # 下面这个queue是优先队列吗？我怎么感觉是用数组实现的？
+        # 是的这个只是普通的队列，用数组实现
         x, y = queue.pop(0)
         for i in range(4):
             a, b = x + dx[i], y + dy[i] # 每一步只能往一个方向走一步
