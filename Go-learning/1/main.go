@@ -188,17 +188,35 @@ func main(){
 	// // male
 	// // unknown
 
-	// 4.3 for循环
-	// break和continue与其他语言一样
-	sum := 0
-	for i := 0; i < 10; i++ {
-		if sum > 50 {
-			break
-		}
-		sum += i
+	// // 4.3 for循环
+	// // break和continue与其他语言一样
+	// sum := 0
+	// for i := 0; i < 10; i++ {
+	// 	if sum > 50 {
+	// 		break
+	// 	}
+	// 	sum += i
+	// }
+	// fmt.Println(sum) // 45
+
+	// 对数组(arr)、切片(slice)、字典(map) 使用 for range 遍历：
+	nums := []int{10, 20, 30, 40}
+	for i, num := range nums {
+		fmt.Println(i, num)
 	}
-	fmt.Println(sum) // 45
+	// 0 10
+	// 1 20
+	// 2 30
+	// 3 40
+	m2 := map[string]string{
+		"Sam":   "Male",
+		"Alice": "Female",
+	}
 
-
+	for key, value := range m2 {
+		fmt.Println(key, value)
+	}
+	// Sam Male
+	// Alice Female
 	
 }
