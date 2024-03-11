@@ -1,15 +1,19 @@
 package main
+
 import "fmt"
+
 // import "reflect"
 
 /*
 //或者可以这么写
 import (
+
 	"fmt"
 	"reflect"
+
 )
 */
-func main(){
+func main() {
 	// /*
 	// 	注释
 	// */
@@ -29,14 +33,14 @@ func main(){
 	// ok := false
 
 	// str1 := "Golang"
-    // str2 := "Go语言"
-    // fmt.Println(reflect.TypeOf(str2[2]).Kind()) // uint8
-    // fmt.Println(str1[2], string(str1[2]))       // 108 l
-    // fmt.Printf("%d %c\n", str2[2], str2[2])     // 232 è
-    // fmt.Println("len(str2)：", len(str2))       // len(str2)： 8
+	// str2 := "Go语言"
+	// fmt.Println(reflect.TypeOf(str2[2]).Kind()) // uint8
+	// fmt.Println(str1[2], string(str1[2]))       // 108 l
+	// fmt.Printf("%d %c\n", str2[2], str2[2])     // 232 è
+	// fmt.Println("len(str2)：", len(str2))       // len(str2)： 8
 	// 啊因为字符串是以 byte 数组的形式存储的，所以，str2[2] 的值并不等于语。
 	// str2 的长度 len(str2) 也不是 4，而是 8（ Go 占 2 byte，语言占 6 byte）。、
-	
+
 	// 正确的处理方式是将 string 转为 rune 数组：
 	// 转换成 []rune 类型后，字符串中的每个字符，
 	// 无论占多少个字节都用 int32 来表示，因而可以正确处理中文。
@@ -47,7 +51,6 @@ func main(){
 	// fmt.Println(runeArr[2], string(runeArr[2]))    // 35821 语
 	// fmt.Println(runeArr[1], string(runeArr[1]))    // 111  o
 	// fmt.Println("len(runeArr):", len(runeArr))    // len(runeArr)： 4
-
 
 	// 数组
 	// var arr1 [5][5]int
@@ -68,7 +71,7 @@ func main(){
 	// marray := [...]{1,2,3,4,5}
 	// 可以看到数组与切片的创建形式完全不同。
 	// 数组操作比较麻烦，数组长度无法改变，所以一般用切片
-	// 片是数组的抽象。 
+	// 片是数组的抽象。
 	// 切片使用数组作为底层结构。
 	// 切片包含三个组件：容量，长度和指向底层数组的指针,切片可以随时进行扩展
 
@@ -92,7 +95,6 @@ func main(){
 	// // 如果是两倍那应该是10，如果是原本的容量加四个元素那应该是9，为何是12？
 	// // 解释：？？不知道
 
-
 	// // 子切片 [start, end) 记住左闭右开 和python一样
 	// sub1 := slice2[3:] // [1 2 3 4]
 	// sub2 := slice2[:3] // [0 0 0]
@@ -102,7 +104,6 @@ func main(){
 	// combined := append(sub1, sub2...) // [1, 2, 3, 4, 0, 0, 0]
 	// fmt.Println(sub1, sub2, sub3)
 	// fmt.Println(combined)
-	
 
 	// // 3.5 字典 和python的字典，java的hashmap差不多
 	// // 仅声明
@@ -126,8 +127,8 @@ func main(){
 	// fmt.Println(*pp) // Hello
 
 	// fmt.Println(p) // str的地址,这三个都一样
-	// fmt.Println(pp) 
-	// fmt.Println(&str) 
+	// fmt.Println(pp)
+	// fmt.Println(&str)
 
 	// // 传参问题
 	// // 一般来说，指针通常在函数传递参数，或者给某个类型定义新的方法时使用。
@@ -153,7 +154,7 @@ func main(){
 	// // 在这里，使用了type 关键字定义了一个新的类型 Gender。
 	// // 使用 const 定义了 MALE 和 FEMALE 2 个常量，Go 语言中没有枚举(enum)的概念，一般可以用常量的方式来模拟枚举。
 	// // 24-3-9 没看懂
-	// type Gender int8
+	// type Gender int8 //这是类似结构体的定义
 	// const (
 	// 	MALE   Gender = 1
 	// 	FEMALE Gender = 2
@@ -218,5 +219,5 @@ func main(){
 	}
 	// Sam Male
 	// Alice Female
-	
+
 }
