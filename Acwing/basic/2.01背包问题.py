@@ -38,3 +38,22 @@ if __name__ == "__main__":
 
     # print(max(f[N][:]))      
     print(f[N][V]) # 直接找右下角就可以了
+
+
+# 优化成一维数组形式
+# 只需要第二个维度遍历的时候倒叙遍历(相当于遍历上一层,利用i-1层的数据,要用没算过的数,才能知道没有选择i物品的时候它的价值是多少)
+    
+def main():
+    N, V = map(int, input().split())
+
+    f = [0] * (V + 1)
+    for i in range(N):
+        v, w = map(int, input().split())
+        for  j in range(V, 0, -1):
+            if j >= v:
+                f[j] = max(f[j], f[j - v] + w)
+
+    print(f[V])
+
+main()
+
