@@ -24,3 +24,13 @@ FROM result r
 子查询
 看小林SQL面试题, 求各个科目前3名的学生(腾讯)
 很巧妙
+
+分组
+每个班级总分
+SELECT s. classid, SUM(r. score) as total_score
+FROM student s
+JOIN result r ON s.sid = r. sid
+GROUP BY s. classid;
+
+
+select 
