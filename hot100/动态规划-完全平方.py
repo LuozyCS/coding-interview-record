@@ -15,7 +15,6 @@
 平方根为整数, 那每个数要尽量大
 '''
 
-
 # dp做法
 class Solution:
     def numSquares(self, n: int) -> int:
