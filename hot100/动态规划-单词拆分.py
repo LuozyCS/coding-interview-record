@@ -34,7 +34,7 @@
 #                     break # 找到一个就可以了, 不break会死循环, 因为trues一直在更新, 会一直往前走, 直到[i:i]
 #         return trues[-1] == n # 和上面一样的道理, n是s[n - 1], 如果n是trues的最后一位, 就代表0到n - 1(闭区间)是可以被拼写出来的
 
-# 最快的     
+# 最标准的dp   
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         # 容量为len(s)的背包，物品为wordDict中的单词
