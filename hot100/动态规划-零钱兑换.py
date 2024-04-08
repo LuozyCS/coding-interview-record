@@ -32,3 +32,4 @@ class Solution:
             for coin in coins:
                 if i >= coin:
                     f[i] = min(f[i], f[i - coin] + 1 )
+        return f[-1] if(f[-1]!=float("inf")) else -1
